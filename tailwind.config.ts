@@ -8,13 +8,13 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      dark_primary_background: "000000",
-      dark_secondary_background: "111111",
-      dark_heading: "FFFFFF",
-      dark_text: "C3C3C3",
-      dark_active_link: "0072F5",
-      dark_stroke: "373737",
-      dark_primary_btn: "EDEDED",
+      dark_primary_background: "#000000",
+      dark_secondary_background: "#111111",
+      dark_heading: "#FFFFFF",
+      dark_text: "#C3C3C3",
+      dark_active_link: "#0072F5",
+      dark_stroke: "#373737",
+      dark_primary_btn: "#EDEDED",
     },
     fontSize: {
       sm: "0.75rem",

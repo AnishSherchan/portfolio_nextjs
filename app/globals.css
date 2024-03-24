@@ -1,11 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.cdnfonts.com/css/satoshi");
 :root {
   font-size: 16px;
 }
 
 * {
   margin: 0px;
+  font-family: "Satoshi", sans-serif;
+}
+#Contact {
+  height: auto;
+  width: 16px;
 }
