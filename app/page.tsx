@@ -46,7 +46,7 @@ export default async function Home() {
           <h2 className=" lg:text-2xl text-dark_text max-w-[750px]">
             I am an energetic and enthusiastic computer science student with a
             strong desire to learn and train with professionals in UI/UX and
-            Frontend development.
+            Frontend development. {projectData && projectData[0].name}
           </h2>
         </div>
       </section>
