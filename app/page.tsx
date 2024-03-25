@@ -2,57 +2,54 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { GetProjectData } from "./_lib/SanityFetch";
 import { TypewriterEffect as TypewriterEffectSmooth } from "./components/TypeWriter";
+
 import { BackgroundBeams } from "./components/BackGroundBeams";
 
 export default async function Home() {
   const projectData: any = await GetProjectData();
   const words = [
     {
-      text: "Build",
-      className: "text-dark_heading",
+      text: "Welcome",
+      className: "lg:text-3xl font-medium tracking-wide text-dark_heading",
     },
     {
-      text: "awesome",
-      className: "text-dark_heading",
+      text: "to",
+      className: "lg:text-3xl font-medium tracking-wide text-dark_heading",
     },
     {
-      text: "apps",
-      className: "text-dark_heading",
+      text: "My",
+      className: "lg:text-3xl font-medium tracking-wide text-dark_heading",
     },
     {
-      text: "with",
-      className: "text-dark_heading",
+      text: "Digital",
+      className: "lg:text-3xl font-bold tracking-wide text-dark_active_link",
     },
     {
-      text: "Aceternity.",
-      className: "text-dark_active_link",
+      text: "World.",
+      className: "lg:text-3xl font-bold tracking-wide text-dark_active_link",
     },
   ];
   console.log(projectData);
   return (
-    <div>
-      <BackgroundBeams />
-      <Link href="/project">
-        <p className=" text-dark_heading">{projectData[0].name}</p>
-        <h1 className=" text-dark_heading text-3xl">Projects</h1>
-      </Link>
-      <p className=" text-dark_heading">
-        Dolor irure cillum sit excepteur Lorem consequat quis. Velit est culpa
-        non aliqua non dolor excepteur ex qui id. Ea sint cupidatat aute labore
-        magna enim excepteur incididunt velit quis nulla qui enim. Nisi qui
-        irure non reprehenderit. Esse aliquip non Lorem aute Lorem enim do
-        ullamco ipsum do ut. Et velit elit do eu eu nisi eu dolore voluptate
-        dolor dolor adipisicing. Nisi cillum ullamco qui ipsum aliquip labore
-        consequat. Ad nulla magna eiusmod elit. Fugiat do consequat incididunt
-        ex pariatur ullamco minim minim. Et aliqua consequat dolore nulla.
-        Occaecat ut anim esse excepteur incididunt labore ut ullamco ipsum
-        ullamco pariatur mollit. Magna deserunt eiusmod in qui officia ullamco
-        labore amet laboris. Aliquip esse labore enim ipsum sint id eu tempor.
-        Ullamco ut cillum qui incididunt. Nostrud reprehenderit et do ad.
-        Eiusmod adipisicing amet consectetur est do nostrud amet eu officia.
-        Velit exercitation ullamco aute ullamco. Anim laborum id exercitation ut
-        nulla.
-      </p>
+    <div className="lg:flex lg:flex-col gap-[60px]">
+      <section>
+        <BackgroundBeams />
+        <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
+          Anish Sherchan
+          <span className=" lg:text-3xl text-[#DDAC58] font-bold">.</span>
+        </h1>
+        <TypewriterEffectSmooth words={words} />
+        <div className="flex flex-col gap-[8px] mt-[12px]">
+          <h2 className=" lg:text-2xl text-dark_text">
+            Designing and Crafting the Web is in our DNA_
+          </h2>
+          <h2 className=" lg:text-2xl text-dark_text max-w-[750px]">
+            I am an energetic and enthusiastic computer science student with a
+            strong desire to learn and train with professionals in UI/UX and
+            Frontend development.
+          </h2>
+        </div>
+      </section>
     </div>
   );
 }

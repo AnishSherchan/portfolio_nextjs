@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={` bg-dark_primary_background `}>
         <div className="flex">
           <NavBar />
-          <div className=" lg:px-[110px] w-full max-w-[1920px] mx-auto">
+          <div className=" lg:px-[110px] lg: py-[100px] w-full max-w-[1920px] mx-auto">
             {children}
           </div>
         </div>
