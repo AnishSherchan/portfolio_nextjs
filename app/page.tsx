@@ -1,13 +1,39 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { GetProjectData } from "./_lib/SanityFetch";
+import { TypewriterEffect as TypewriterEffectSmooth } from "./components/TypeWriter";
+import { BackgroundBeams } from "./components/BackGroundBeams";
 
 export default async function Home() {
   const projectData: any = await GetProjectData();
+  const words = [
+    {
+      text: "Build",
+      className: "text-dark_heading",
+    },
+    {
+      text: "awesome",
+      className: "text-dark_heading",
+    },
+    {
+      text: "apps",
+      className: "text-dark_heading",
+    },
+    {
+      text: "with",
+      className: "text-dark_heading",
+    },
+    {
+      text: "Aceternity.",
+      className: "text-dark_active_link",
+    },
+  ];
   console.log(projectData);
   return (
     <div>
+      <BackgroundBeams />
       <Link href="/project">
+        <p className=" text-dark_heading">{projectData[0].name}</p>
         <h1 className=" text-dark_heading text-3xl">Projects</h1>
       </Link>
       <p className=" text-dark_heading">
