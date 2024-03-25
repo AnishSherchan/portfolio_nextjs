@@ -16,22 +16,22 @@ const NavBar = () => {
   const social = [
     {
       name: "Github",
-      url: "",
+      url: "https://github.com/AnishSherchan",
       icon: "codicon:github",
     },
     {
       name: "X (Twitter)",
-      url: "",
+      url: "https://twitter.com/AnishSherchan06",
       icon: "ri:twitter-x-fill",
     },
     {
       name: "LinkedIn",
-      url: "",
+      url: "https://www.linkedin.com/in/anish-sherchan-aba3801b0/",
       icon: "ant-design:linkedin-outlined",
     },
     {
       name: "Instagram",
-      url: "",
+      url: "https://www.instagram.com/anishsherchan146/",
       icon: "radix-icons:instagram-logo",
     },
   ];
@@ -74,13 +74,13 @@ const NavBar = () => {
   return (
     <div
       className={`${
-        isCollapsed ? "w-[88px]" : "w-64"
-      } transition-width duration-500 z-10 sticky top-0 bg-dark_secondary_background min-h-screen h-full py-5 px-5`}
+        isCollapsed ? "lg:w-[88px]" : "lg:w-64"
+      } transition-width duration-500 lg:block z-10 lg:sticky lg:top-0 bg-dark_secondary_background lg:min-h-screen lg:h-full lg:overflow-visible lg:py-5 lg:px-5 fixed bottom-0 sm:bottom-2 sm:rounded-3xl lg:rounded-none right-0 left-0 flex mx-auto overflow-x-scroll sm:w-[450px]  px-2 py-2`}
     >
-      <div className="relative">
+      <div className="lg:relative hidden lg:block">
         <button
           onClick={() => setIsCollapsed((prev) => !prev)}
-          className="text-dark_heading absolute right-[-30px] bg-dark_secondary_background rounded-full shadow-md ring-1 ring-dark_stroke"
+          className="text-dark_heading absolute top-1 right-[-30px] bg-dark_primary_background rounded-full shadow-md ring-2 ring-dark_secondary_background"
         >
           <Icon
             icon={isCollapsed ? "mingcute:right-line" : "mingcute:left-line"}
@@ -94,7 +94,7 @@ const NavBar = () => {
           isCollapsed ? "opacity-0" : "opacity-100"
         }`}
       > */}
-      <div className="w-full flex flex-wrap justify-center mb-[30px]">
+      <div className="w-full lg:flex hidden flex-wrap justify-center mb-[30px]  ">
         <span>
           <Image
             src={isCollapsed ? Collapsed : Main_Logo}
@@ -104,17 +104,16 @@ const NavBar = () => {
       </div>
 
       <p
-        className={`${navClassNames}  ${
+        className={`${navClassNames} lg:block hidden  ${
           isCollapsed ? "text-center" : ""
         } text-[#ABABAB]  font-medium text-base`}
       >
         Menu
       </p>
-
-      <div className="flex  flex-col gap-1 mt-3">
+      <div className="flex md:w-max lg:w-auto justify-center lg:justify-normal lg:flex-col gap-1 lg:mt-3 mx-auto">
         {navItems.map((item, index) => (
-          <Link key={index} href={item.url}>
-            <div className="flex relative  flex-wrap flex-row  px-[15px] py-2 items-center">
+          <Link key={index} href={item.url} prefetch={true}>
+            <div className="flex relative  flex-wrap w-max lg:w-auto flex-col lg:flex-row  px-[15px] gap-[1px] py-2 items-center">
               <Icon
                 id={item.name}
                 icon={item.icon}
@@ -127,7 +126,7 @@ const NavBar = () => {
                 height="18px"
               />
               <span
-                className={`transition-all duration-500  absolute left-12 text-base ${
+                className={`transition-all  duration-500  lg:absolute left-12 text-sm lg:text-base ${
                   isCollapsed ? "opacity-0" : "opacity-100"
                 } ${
                   pathname === item.url
@@ -145,45 +144,48 @@ const NavBar = () => {
 
       <Divider
         type="horizontal"
-        className="h-[1px] mb-5 rounded-full bg-dark_stroke text-dark_stroke"
+        className="hidden lg:block h-[1px] mb-5 rounded-full bg-dark_stroke text-dark_stroke"
       />
 
       <p
-        className={`${navClassNames} ${
+        className={`${navClassNames} lg:block hidden ${
           isCollapsed ? "text-center" : ""
         } text-[#ABABAB]  font-medium text-base`}
       >
         Connect
       </p>
-
-      <div className="flex flex-col gap-1 mt-3">
+      <div className="flex md:w-max lg:w-auto justify-center lg:justify-normal lg:flex-col gap-1 lg:mt-3 mx-auto">
         {social.map((item, index) => (
-          <Link key={index} href={item.url}>
-            <div className="flex relative flex-wrap flex-row gap-4 px-[15px] py-2 items-center">
-              <Icon
-                id={item.name}
-                icon={item.icon}
-                className={`${
-                  pathname == item.url
-                    ? "text-dark_active_link"
-                    : "text-dark_text"
-                }`}
-                width="18px"
-                height="18px"
-              />
-              <span
-                className={`transition-all text-base duration-500  absolute left-12 ${
-                  isCollapsed ? "opacity-0" : "opacity-100"
-                } ${
-                  pathname === item.url
-                    ? "text-dark_active_link"
-                    : "text-dark_text"
-                }`}
-              >
-                {item.name}
-              </span>
-            </div>
-          </Link>
+          <a
+            key={index}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex relative  flex-wrap w-max lg:w-auto flex-col lg:flex-row  px-[15px] gap-[1px] py-2 items-center"
+          >
+            <Icon
+              id={item.name}
+              icon={item.icon}
+              className={`${
+                pathname == item.url
+                  ? "text-dark_active_link"
+                  : "text-dark_text"
+              }`}
+              width="18px"
+              height="18px"
+            />
+            <span
+              className={`transition-all  duration-500  lg:absolute left-12 text-sm lg:text-base ${
+                isCollapsed ? "opacity-0" : "opacity-100"
+              } ${
+                pathname === item.url
+                  ? "text-dark_active_link"
+                  : "text-dark_text"
+              }`}
+            >
+              {item.name}
+            </span>
+          </a>
         ))}
       </div>
     </div>
