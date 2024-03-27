@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <div className="lg:flex lg:flex-col gap-[60px]">
       <section>
-        <BackgroundBeams className=" sm:hidden block" />
+        <BackgroundBeams className=" hidden md:block" />
         <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
           Anish Sherchan
           <span className=" lg:text-3xl text-[#DDAC58] font-bold">.</span>
