@@ -1,8 +1,6 @@
-import { Suspense } from "react";
-import Link from "next/link";
 import { GetProjectData } from "./_lib/SanityFetch";
 import { TypewriterEffect as TypewriterEffectSmooth } from "./components/TypeWriter";
-
+import { Button } from "./components/Button";
 import { BackgroundBeams } from "./components/BackGroundBeams";
 
 export default async function Home() {
@@ -33,7 +31,7 @@ export default async function Home() {
   return (
     <div className="lg:flex lg:flex-col gap-[60px]">
       <section>
-        <BackgroundBeams />
+        <BackgroundBeams className=" sm:hidden block" />
         <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
           Anish Sherchan
           <span className=" lg:text-3xl text-[#DDAC58] font-bold">.</span>
@@ -49,6 +47,7 @@ export default async function Home() {
             Frontend development. {projectData && projectData[0].name}
           </h2>
         </div>
+        {/* <Button type="Primary" title="Hello" /> */}
       </section>
     </div>
   );
