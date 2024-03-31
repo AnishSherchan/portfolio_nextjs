@@ -30,8 +30,8 @@ export default async function Home() {
   console.log(projectData);
   return (
     <div className="lg:flex lg:flex-col gap-[60px]">
-      <section>
-        <BackgroundBeams className=" hidden md:block" />
+      {/* <BackgroundBeams className=" hidden md:block" /> */}
+      <main className=" z-10">
         <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
           Anish Sherchan
           <span className=" lg:text-3xl text-[#DDAC58] font-bold">.</span>
@@ -47,8 +47,15 @@ export default async function Home() {
             Frontend development. {projectData && projectData[0].name}
           </h2>
         </div>
-        {/* <Button type="Primary" title="Hello" /> */}
-      </section>
+        <div className=" mt-[30px] flex flex-wrap gap-[25px]">
+          <Button type="Primary" icon="fa:paper-plane" title="Contact Me" />
+          <Button type="Secondary" icon="uil:user" title="About" />
+        </div>
+      </main>
+
+      {/* <div>
+        <h2 className=" text-white">Latest Projects</h2>
+      </div> */}
     </div>
   );
 }

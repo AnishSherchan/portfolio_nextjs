@@ -1,3 +1,6 @@
+"use client";
+import { Icon } from "@iconify/react";
+
 export const Button = ({
   title,
   onClick,
@@ -17,12 +20,24 @@ export const Button = ({
   switch (type) {
     case "Primary":
       classNames =
-        "bg-dark_primary_btn rounded-[10px] px-[25px]  py-[8px] text-base";
+        "bg-dark_primary_btn rounded-[10px] hover:bg-[#ccc] px-[25px] cursor-pointer  py-[8px] text-base";
       break;
-
+    case "Secondary":
+      classNames =
+        "bg-dark_secondary_background cursor-pointer hover:bg-[#1f1f1f] rounded-[10px] text-white px-[25px] border-2 border-dark_stroke  py-[8px] text-base";
+      break;
     default:
-      classNames = "bg-dark_primary_btn px-[25px] py-[10px] text-base";
+      classNames =
+        "bg-dark_active_link cursor-pointer hover:bg-[#0062d1] rounded-[10px] text-white px-[25px] py-[10px] text-base";
       break;
   }
-  return <button className={classNames}>{title}</button>;
+  return (
+    <button
+      className={`${classNames} transition-colors flex flex-warp items-center gap-[8px] `}
+    >
+      {" "}
+      {icon && <Icon icon={icon} height={18} width={18} />}
+      {title}
+    </button>
+  );
 };

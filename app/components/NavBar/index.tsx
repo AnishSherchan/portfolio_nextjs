@@ -113,7 +113,7 @@ const NavBar = () => {
       <div className="flex md:w-max lg:w-auto justify-center lg:justify-normal lg:flex-col gap-1 lg:mt-3 mx-auto">
         {navItems.map((item, index) => (
           <Link key={index} href={item.url} prefetch={true}>
-            <div className="flex relative  flex-wrap w-max lg:w-auto flex-col lg:flex-row  px-[15px] gap-[1px] py-2 items-center">
+            <div className="flex relative  flex-wrap w-max lg:w-auto flex-col lg:flex-row cursor-pointer  px-[15px] gap-[1px] py-2 items-center">
               <Icon
                 id={item.name}
                 icon={item.icon}

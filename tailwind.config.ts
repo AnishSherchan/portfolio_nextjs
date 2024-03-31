@@ -17,7 +17,7 @@ const config: Config = {
         dark_secondary_background: "#111111",
         dark_heading: "#FFFFFF",
         dark_text: "#C3C3C3",
-        dark_active_link: "#0072F5",
+        dark_active_link: "#0072f5",
         dark_stroke: "#373737",
         dark_primary_btn: "#EDEDED",
       },
