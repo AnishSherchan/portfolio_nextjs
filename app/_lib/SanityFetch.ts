@@ -1,11 +1,9 @@
 import { client } from "./client";
-
+// "plaintextBody": pt::text(content),
 export const GetProjectData = async () => {
-  const PROJECT_QUERY = `*[_type == "projects"] { "plaintextBody": pt::text(content), name, _id, content }`;
+  const PROJECT_QUERY = `*[_type == "projects"] {  name, _id, content, pinned,preview_url,Tag,image,github_url,_createdAt,_updatedAt,slug,description,"techstackref":techstackref[]->{icon} }`;
   try {
-    const projectData: [
-      { name: string; _id: string; content: [any]; plaintextBody: string }
-    ] = await client.fetch(PROJECT_QUERY);
+    const projectData = await client.fetch(PROJECT_QUERY);
 
     return projectData;
   } catch (error) {

@@ -1,5 +1,6 @@
 "use client";
 import { Icon } from "@iconify/react";
+import Spinner from "../Spinner";
 
 export const Button = ({
   title,
@@ -34,8 +35,9 @@ export const Button = ({
   return (
     <button
       className={`${classNames} transition-colors flex flex-warp items-center gap-[8px] `}
+      disabled={loading}
     >
-      {" "}
+      {loading && <Spinner />}{" "}
       {icon && <Icon icon={icon} height={18} width={18} />}
       {title}
     </button>
