@@ -75,7 +75,7 @@ const NavBar = () => {
     <div
       className={`${
         isCollapsed ? "lg:w-[88px]" : "lg:w-64"
-      } transition-width duration-500 lg:block z-10 lg:sticky lg:top-0 bg-dark_secondary_background lg:min-h-screen lg:h-full lg:overflow-visible lg:py-5 lg:px-5 fixed bottom-0 sm:bottom-2 sm:rounded-3xl lg:rounded-none right-0 left-0 flex mx-auto overflow-x-scroll sm:w-[450px]  px-2 py-2`}
+      } transition-width duration-500 lg:block z-50 lg:sticky lg:top-0 bg-dark_secondary_background lg:min-h-screen lg:h-full lg:overflow-visible lg:py-5 lg:px-5 fixed bottom-0 sm:bottom-2 sm:rounded-3xl lg:rounded-none right-0 left-0 flex mx-auto overflow-x-scroll sm:w-[450px]  px-2 py-2`}
     >
       <div className="lg:relative hidden lg:block">
         <button

@@ -24,9 +24,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   _createdAt,
   icon,
 }) => {
-  console.log(icon);
   return (
-    <div className=" max-w-[500px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke">
+    <div className=" max-w-[500px] w-[500px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke">
       <div className=" relative max-w-[500px] h-[250px] overflow-hidden">
         <Image
           className=" w-full h-auto rounded-[5px] object-cover"
@@ -45,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </p>
         <div className="flex flex-row flex-wrap justify-between">
           <div className=" flex gap-[10px] items-center ">
-            {icon.map((item, index) => {
+            {icon?.map((item, index) => {
               return <Icon icon={item.icon} key={index} width={18} />;
             })}
           </div>

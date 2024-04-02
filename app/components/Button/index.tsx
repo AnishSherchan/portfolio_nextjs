@@ -36,6 +36,7 @@ export const Button = ({
     <button
       className={`${classNames} transition-colors flex flex-warp items-center gap-[8px] `}
       disabled={loading}
+      onClick={onClick}
     >
       {loading && <Spinner />}{" "}
       {icon && <Icon icon={icon} height={18} width={18} />}

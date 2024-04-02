@@ -1,11 +1,17 @@
-import { GetProjectData } from "./_lib/SanityFetch";
+import { GetProjectData, GetTechStackData } from "./_lib/SanityFetch";
 import { TypewriterEffect as TypewriterEffectSmooth } from "./components/TypeWriter";
 import { Button } from "./components/Button";
 import { BackgroundBeams } from "./components/BackGroundBeams";
 import ProjectCard from "./components/ProjectCard";
+import TechStackCard from "./components/TechStackCard";
+import Head from "next/head";
+import ProjectShowCase from "./components/Contents/ProjectShowCase";
 
 export default async function Home() {
   const projectData: any = await GetProjectData();
+  const techStackData: any = await GetTechStackData();
+  console.log(techStackData.slice(0, 4));
+
   const words = [
     {
       text: "Welcome",
@@ -28,11 +34,10 @@ export default async function Home() {
       className: "lg:text-3xl font-bold tracking-wide text-dark_active_link",
     },
   ];
-  console.log(projectData);
   return (
     <div className="lg:flex lg:flex-col gap-[60px]">
       <BackgroundBeams className=" hidden md:block" />
-      <main className="">
+      <main className="z-10">
         <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
           Anish Sherchan
           <span className=" lg:text-3xl text-[#DDAC58] font-bold">.</span>
@@ -55,22 +60,27 @@ export default async function Home() {
         </div>
       </main>
 
-      <div id="projects" className=" flex flex-col flex-wrap gap-[15px]">
-        <div className=" flex flex-wrap justify-between items-center">
-          <h2 className=" text-dark_heading">Latest Projects</h2>
-          {/* ? Add onClick Event */}
-          <Button title="View all" type="Secondary" />
+      <ProjectShowCase projectData={projectData} />
+
+      <div
+        id="TechStack"
+        className=" z-10 relative flex flex-col flex-wrap gap-[15px] mt-[15px]"
+      >
+        <div>
+          <h2 className=" text-dark_heading">Tech Stack</h2>
+          <h3 className=" text-dark_text">
+            Tools and resources which I use for developing Web applications.
+          </h3>
         </div>
-        <div className="w-full flex flex-row flex-wrap gap-[30px] justify-between">
-          {projectData.map((project: any) => {
+        <div className="w-full flex flex-wrap gap-[30px]  justify-between">
+          {techStackData?.slice(1, 5).map((tech: any) => {
             return (
-              <ProjectCard
-                key={project._id}
-                img={project.image}
-                name={project.name}
-                desc={project.description}
-                _createdAt={project._createdAt}
-                icon={project.techstackref}
+              <TechStackCard
+                title={tech.name}
+                description={tech.description}
+                icon={tech.icon}
+                key={tech._id}
+                pinned={tech.pinned}
               />
             );
           })}
