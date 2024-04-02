@@ -31,7 +31,7 @@ export default async function Home() {
   console.log(projectData);
   return (
     <div className="lg:flex lg:flex-col gap-[60px]">
-      {/* <BackgroundBeams className=" hidden md:block" /> */}
+      <BackgroundBeams className=" hidden md:block" />
       <main className="">
         <h1 className=" text-dark_heading lg:text-3xl tracking-wide font-bold">
           Anish Sherchan
