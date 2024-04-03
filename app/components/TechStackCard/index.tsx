@@ -13,7 +13,6 @@ const TechStackCard = ({
   icon: string;
   pinned: boolean;
 }) => {
-  console.log({ title, description, icon, pinned });
   return (
     <div className=" p-[14px] cursor-pointer max-w-[500px] w-[500px] gap-[10px] border-2 border-dark_stroke rounded-[17px] flex justify-between items-center">
       <div id="Description" className=" flex flex-col flex-wrap gap-1">

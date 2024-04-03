@@ -79,7 +79,9 @@ const NavBar = () => {
     >
       <div className="lg:relative hidden lg:block">
         <button
-          onClick={() => setIsCollapsed((prev) => !prev)}
+          onClick={() => {
+            setIsCollapsed((prev) => !prev);
+          }}
           className="text-dark_heading absolute top-1 right-[-30px] bg-dark_primary_background rounded-full shadow-md ring-2 ring-dark_secondary_background"
         >
           <Icon

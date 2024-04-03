@@ -20,7 +20,7 @@ const ProjectShowCase = ({ projectData }: { projectData: any }) => {
           type="Secondary"
         />
       </div>
-      <div className="w-full flex flex-row flex-wrap gap-[30px] justify-between">
+      <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[70px] justify-center">
         {projectData.slice(0, 2).map((project: any) => {
           return (
             <ProjectCard
