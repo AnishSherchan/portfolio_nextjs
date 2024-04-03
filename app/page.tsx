@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projectData: any = await GetProjectData();
+  const projectData: any = (await GetProjectData()) || [];
   const techStackData: any = await GetTechStackData();
-
+  console.log(projectData);
   const words = [
     {
       text: "Welcome",
@@ -82,7 +82,7 @@ export default async function Home() {
         </div>
       </main>
 
-      <ProjectShowCase projectData={projectData} />
+      <ProjectShowCase projectData={projectData} trimProjectCard={true} />
 
       <TechStackShowCase techStackData={techStackData} />
     </div>

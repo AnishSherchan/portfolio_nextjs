@@ -11,7 +11,7 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
       id="TechStack"
       className=" z-10 relative flex flex-col flex-wrap gap-[15px] mt-[15px]"
     >
-      <div className=" flex flex-col flex-wrap gap-3">
+      <div className=" flex flex-col flex-wrap gap-3 lg:gap-0">
         <div className=" flex justify-between items-center ">
           <h2 className=" text-dark_heading text-2xl">Tech Stack</h2>
           <Button
