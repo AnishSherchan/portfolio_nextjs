@@ -2,7 +2,13 @@ import NavBar from "./components/NavBar";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Head from "next/head";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.png",
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
