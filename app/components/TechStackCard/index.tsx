@@ -14,7 +14,7 @@ const TechStackCard = ({
   pinned: boolean;
 }) => {
   return (
-    <div className=" p-[14px] cursor-pointer max-w-[500px] w-[500px] gap-[10px] border-2 border-dark_stroke rounded-[17px] flex justify-between items-center">
+    <div className=" p-[14px] cursor-pointer max-w-[470px] w-[470px] gap-[10px] border-2 border-dark_stroke rounded-[17px] flex justify-between items-center">
       <div id="Description" className=" flex flex-col flex-wrap gap-1">
         <div className=" flex flex-wrap gap-1 items-center">
           <h2 className=" text-dark_heading font-medium text-2xl">{title}</h2>

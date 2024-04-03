@@ -8,7 +8,7 @@ import MainLogo from "../../../public/Main_Logo.svg";
 const footer = () => {
   return (
     <div
-      className={`w-full hidden lg:block transition-all duration-700 relative z-50 py-5
+      className={`w-full hidden lg:block transition-all duration-700 relative z-10 py-5
        bg-dark_secondary_background text-white px-10`}
     >
       <div className="flex flex-col lg:flex-row flex-wrap lg:justify-between lg:items-center">

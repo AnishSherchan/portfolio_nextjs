@@ -25,8 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   icon,
 }) => {
   return (
-    <div className=" max-w-[500px] w-[500px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke">
-      <div className=" relative max-w-[500px] h-[250px] overflow-hidden">
+    <div className=" max-w-[470px] w-[470px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke">
+      <div className=" relative max-w-[500px] h-[220px] overflow-hidden">
         <Image
           className=" w-full h-auto rounded-[5px] object-cover"
           src={img ? builder.image(img).quality(100).url() : ProjectDefault}

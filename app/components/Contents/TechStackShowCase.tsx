@@ -6,6 +6,13 @@ import { useRouter } from "next/navigation";
 
 const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
   const router = useRouter();
+  console.log(techStackData);
+  const pinnedFrontendTech = techStackData?.filter((stack: any) => {
+    return stack.pinned === true && stack.development_format === "frontend";
+  });
+  const pinnedBackendTech = techStackData?.filter((stack: any) => {
+    return stack.pinned === true && stack.development_format === "backend";
+  });
   return (
     <div
       id="TechStack"
@@ -24,8 +31,21 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
           Tools and resources which I use for developing Web applications.
         </h3>
       </div>
-      <div className="w-full flex flex-wrap gap-[30px] justify-center lg:justify-between">
-        {techStackData?.slice(1, 5).map((tech: any) => {
+      <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[70px] justify-center">
+        {pinnedFrontendTech?.map((tech: any) => {
+          return (
+            <TechStackCard
+              title={tech.name}
+              description={tech.description}
+              icon={tech.icon}
+              key={tech._id}
+              pinned={tech.pinned}
+            />
+          );
+        })}
+      </div>
+      <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[70px] justify-center">
+        {pinnedBackendTech?.map((tech: any) => {
           return (
             <TechStackCard
               title={tech.name}
