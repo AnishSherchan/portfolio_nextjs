@@ -61,15 +61,15 @@ export default async function Home() {
           <span className=" text-3xl text-[#DDAC58] font-bold">.</span>
         </h1>
         <TypewriterEffectSmooth words={words} />
-        <div className="flex flex-col gap-[8px] mt-[12px]">
-          <h2 className=" text-xl lg:text-2xl text-dark_text">
+        <div className="flex flex-col gap-[10px] mt-[12px]">
+          <h2 className=" text-2xl text-dark_text">
             Designing and Crafting the Web is in our DNA_
           </h2>
-          <h2 className=" text-xl lg:text-2xl text-dark_text max-w-[750px]">
+          <h3 className=" text-xl  text-dark_text max-w-[750px]">
             I am an energetic and enthusiastic computer science student with a
             strong desire to learn and train with professionals in UI/UX and
             Frontend development. {projectData && projectData[0]?.name}
-          </h2>
+          </h3>
         </div>
         <div className=" mt-[30px] flex flex-wrap gap-[25px]">
           {/* ? Add onClick Event */}

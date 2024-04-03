@@ -13,7 +13,7 @@ export default function RootLayout({
         <div className="flex">
           <NavBar />
           <div className=" w-full">
-            <div className=" lg:px-[110px] py-8 pb-28 px-6 lg:py-[100px] w-full max-w-[1920px] mx-auto">
+            <div className=" lg:px-[110px] py-10 pb-28 px-6 lg:py-[100px] w-full max-w-[1920px] mx-auto">
               {children}
             </div>
             <Footer />

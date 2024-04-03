@@ -12,7 +12,7 @@ const ProjectShowCase = ({ projectData }: { projectData: any }) => {
       className=" z-10 relative flex flex-col flex-wrap gap-[15px] mt-[15px]"
     >
       <div className=" flex flex-wrap justify-between items-center">
-        <h2 className=" text-dark_heading">Latest Projects</h2>
+        <h2 className=" text-dark_heading text-2xl">Latest Projects</h2>
         {/* ? Add onClick Event */}
         <Button
           onClick={() => router.push("/project")}

@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className=" relative max-w-[500px] h-[250px] overflow-hidden">
         <Image
           className=" w-full h-auto rounded-[5px] object-cover"
-          src={img ? builder.image(img).url() : ProjectDefault}
+          src={img ? builder.image(img).quality(100).url() : ProjectDefault}
           alt="Project Image"
           fill={true}
         />
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         id="Desc_Project"
         className=" flex flex-col px-[10px] gap-[15px] flex-wrap"
       >
-        <h2 className=" text-dark_heading">{name}</h2>
+        <h2 className=" text-dark_heading text-2xl">{name}</h2>
         <p className=" text-dark_text text-base">
           {desc?.length > 180 ? `${desc?.slice(0, 180)}...` : desc}
         </p>

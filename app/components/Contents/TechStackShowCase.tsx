@@ -13,14 +13,14 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
     >
       <div className=" flex flex-col flex-wrap gap-3">
         <div className=" flex justify-between items-center ">
-          <h2 className=" text-dark_heading">Tech Stack</h2>
+          <h2 className=" text-dark_heading text-2xl">Tech Stack</h2>
           <Button
             onClick={() => router.push("/techstack")}
             title="View all"
             type="Secondary"
           />
         </div>
-        <h3 className=" text-dark_text">
+        <h3 className=" text-dark_text text-xl">
           Tools and resources which I use for developing Web applications.
         </h3>
       </div>
