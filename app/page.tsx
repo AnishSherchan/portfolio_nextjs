@@ -54,7 +54,7 @@ export default async function Home() {
   ];
   return (
     <div className="flex flex-col lg:gap-[60px] gap-[30px]">
-      <BackgroundBeams className=" hidden md:block" />
+      <BackgroundBeams />
       <main className="z-10">
         <h1 className=" text-dark_heading text-3xl  tracking-wide font-bold">
           Anish Sherchan
