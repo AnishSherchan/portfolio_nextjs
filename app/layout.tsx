@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import "./globals.css";
 import Footer from "./components/Footer";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -9,6 +10,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="canonical"
+          href="https://anishsherchan.com.np"
+          key="canonical"
+        />
+      </Head>
       <body className={` bg-dark_primary_background `}>
         <div className="flex">
           <NavBar />
