@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const projectData: any = (await GetProjectData()) || [];
-  const techStackData: any = await GetTechStackData();
+  const techStackData: any = (await GetTechStackData()) || [];
   // console.log(projectData);
   const words = [
     {

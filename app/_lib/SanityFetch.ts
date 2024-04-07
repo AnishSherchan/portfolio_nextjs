@@ -23,3 +23,17 @@ export const GetTechStackData = async () => {
     throw error;
   }
 };
+
+export const GetServiceData = async () => {
+  const Service_QUERY = `*[_type == "service"] {slug, description,
+"plaintextBody": pt::text(description),
+    
+    title}`;
+  try {
+    const ServiceData = await client.fetch(Service_QUERY);
+    return ServiceData;
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    throw error;
+  }
+};
