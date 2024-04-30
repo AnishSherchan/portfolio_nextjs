@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 
 const TechStack = async () => {
   const techStackData: any = (await GetTechStackData()) || [];
-  console.log(techStackData);
 
   return (
     <>

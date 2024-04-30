@@ -5,7 +5,6 @@ import ServicesCard from "../components/ServicesCard";
 const Services = async () => {
   // Fetch service data asynchronously
   const serviceData = (await GetServiceData()) || [];
-  console.log(serviceData);
 
   return (
     <div className=" text-dark_text flex flex-col gap-[60px]">

@@ -12,7 +12,6 @@ const ProjectShowCase = ({
   trimProjectCard: boolean;
 }) => {
   const router = useRouter();
-  console.log(projectData);
   return (
     <div
       id="projects"

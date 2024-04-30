@@ -31,32 +31,34 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
           Tools and resources which I use for developing Web applications.
         </h3>
       </div>
-      <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[70px] justify-center">
-        {pinnedFrontendTech?.map((tech: any) => {
-          return (
-            <TechStackCard
-              title={tech.name}
-              description={tech.description}
-              icon={tech.icon}
-              key={tech._id}
-              pinned={tech.pinned}
-            />
-          );
-        })}
-      </div>
-      <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[70px] justify-center">
-        {pinnedBackendTech?.map((tech: any) => {
-          return (
-            <TechStackCard
-              title={tech.name}
-              description={tech.description}
-              icon={tech.icon}
-              key={tech._id}
-              pinned={tech.pinned}
-            />
-          );
-        })}
-      </div>
+      <>
+        <div className="w-full flex flex-row flex-wrap md:gap-5 lg:gap-10 justify-center">
+          {pinnedFrontendTech?.map((tech: any) => {
+            return (
+              <TechStackCard
+                title={tech.name}
+                description={tech.description}
+                icon={tech.icon}
+                key={tech._id}
+                pinned={tech.pinned}
+              />
+            );
+          })}
+        </div>
+        <div className="w-full flex flex-row flex-wrap md:gap-5 lg:gap-10 justify-center">
+          {pinnedBackendTech?.map((tech: any) => {
+            return (
+              <TechStackCard
+                title={tech.name}
+                description={tech.description}
+                icon={tech.icon}
+                key={tech._id}
+                pinned={tech.pinned}
+              />
+            );
+          })}
+        </div>
+      </>
     </div>
   );
 };

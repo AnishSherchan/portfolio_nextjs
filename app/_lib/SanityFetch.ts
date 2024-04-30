@@ -19,7 +19,7 @@ export const GetTechStackData = async () => {
 
     return TeckStackData;
   } catch (error) {
-    console.error("Error fetching project data:", error);
+    console.error("Error fetching Tech stack data:", error);
     throw error;
   }
 };
@@ -33,7 +33,19 @@ export const GetServiceData = async () => {
     const ServiceData = await client.fetch(Service_QUERY);
     return ServiceData;
   } catch (error) {
-    console.error("Error fetching project data:", error);
+    console.error("Error fetching Service data:", error);
+    throw error;
+  }
+};
+
+export const GetAboutData = async () => {
+  const About_Query = `*[_type == "my_story"] 
+  { title, email, profile_photo, story }`;
+  try {
+    const AboutData = await client.fetch(About_Query);
+    return AboutData;
+  } catch (error) {
+    console.error("Error fetching About data:", error);
     throw error;
   }
 };
