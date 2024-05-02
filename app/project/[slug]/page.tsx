@@ -41,7 +41,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               fill={true}
             />
           </div>
-          <div className=" flex flex-wrap space-x-[10px]">
+          <div className=" flex flex-wrap gap-[10px]">
             {Tag.map((tag: string, index: number) => (
               <Chip title={tag} key={`${tag} ${index}`} />
             ))}
@@ -52,7 +52,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </div>
         <div className=" flex flex-col gap-[15px]">
           <h2 className=" text-white text-2xl">Tech Stack Used</h2>
-          <div className=" w-full flex flex-row flex-wrap md:gap-5 lg:gap-8 justify-center ">
+          <div className=" w-full flex flex-row flex-wrap gap-5 lg:gap-8 justify-center ">
             {techstackref?.map((tech: any) => {
               return (
                 <TechStackCard
