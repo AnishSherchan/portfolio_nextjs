@@ -32,7 +32,7 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
         </h3>
       </div>
       <>
-        <div className="w-full flex flex-row flex-wrap md:gap-5 lg:gap-10 justify-center">
+        <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-10 justify-center">
           {pinnedFrontendTech?.map((tech: any) => {
             return (
               <TechStackCard
@@ -45,7 +45,7 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
             );
           })}
         </div>
-        <div className="w-full flex flex-row flex-wrap md:gap-5 lg:gap-10 justify-center">
+        <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-10 justify-center">
           {pinnedBackendTech?.map((tech: any) => {
             return (
               <TechStackCard
