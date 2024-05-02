@@ -33,7 +33,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       </div>
       <div className=" flex flex-col gap-[35px]">
         <div className="flex flex-col w-full gap-[10px] p-[10px]">
-          <div className=" relative min-h-[490px] w-auto">
+          <div className=" relative min-h-[250px] md:min-h-[490px] w-auto">
             <Image
               className=" w-full h-auto rounded-[10px] object-cover"
               src={BuildImageUrl(image)}
