@@ -1,6 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react";
 import Spinner from "../Spinner";
+import Link from "next/link";
 
 export const Button = ({
   title,
@@ -42,5 +43,30 @@ export const Button = ({
       {icon && <Icon icon={icon} height={18} width={18} />}
       {title}
     </button>
+  );
+};
+
+export const BackButton = ({ href, icon }: { href: string; icon: string }) => {
+  return (
+    <Link href={href}>
+      <div className="flex flex-wrap gap-[8px] text-dark_text cursor-pointer items-center">
+        {" "}
+        <Icon
+          icon={icon}
+          height={18}
+          width={18}
+          className="text-dark_text"
+        />{" "}
+        All Projects
+      </div>
+    </Link>
+  );
+};
+
+export const Chip = ({ title }: { title: string }) => {
+  return (
+    <div className=" bg-[#3B82F6] px-[14px] flex justify-center items-center py-[4px] w-fit rounded-full cursor-pointer">
+      <span className=" text-white text-sm">{title}</span>
+    </div>
   );
 };

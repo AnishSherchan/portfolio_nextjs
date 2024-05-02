@@ -37,6 +37,7 @@ const ProjectShowCase = ({
         {(trimProjectCard ? projectData.slice(0, 2) : projectData).map(
           (project: any) => (
             <ProjectCard
+              handleClick={() => router.push(`project/${project.slug.current}`)}
               key={project._id}
               img={project.image}
               name={project.name}

@@ -5,6 +5,7 @@ interface ProjectCardProps {
   desc: string;
   name: string;
   icon: { icon: string }[];
+  handleClick: any;
   _createdAt: string; // Assuming _createdAt is a string representing the creation date
 }
 
@@ -20,12 +21,16 @@ const builder = imageUrlBuilder(client);
 const ProjectCard: React.FC<ProjectCardProps> = ({
   img,
   desc,
+  handleClick,
   name,
   _createdAt,
   icon,
 }) => {
   return (
-    <div className=" max-w-[470px] w-[470px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke">
+    <div
+      className=" max-w-[470px] w-[470px] h-auto rounded-[17px] p-3 flex flex-col flex-wrap gap-3 cursor-pointer bg-dark_secondary_background border-2 border-dark_stroke"
+      onClick={handleClick}
+    >
       <div className=" relative max-w-[500px] h-[220px] overflow-hidden">
         <Image
           className=" w-full h-auto rounded-[5px] object-cover"

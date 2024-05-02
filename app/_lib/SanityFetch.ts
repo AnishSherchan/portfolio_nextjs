@@ -49,3 +49,15 @@ export const GetAboutData = async () => {
     throw error;
   }
 };
+
+export const GetSpecificProjectData = async (slug: string) => {
+  const ProjectData = `*[_type == "projects" && slug.current == "${slug}"] 
+  {_createdAt,Tag,image,name,content,slug,preview_url,"techstackref":techstackref[]->{...},_id,_createdAt,pinned,github_url}`;
+  try {
+    const Project = await client.fetch(ProjectData);
+    return Project;
+  } catch (error) {
+    console.error("Error fetching About data:", error);
+    throw error;
+  }
+};

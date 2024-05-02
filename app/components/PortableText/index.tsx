@@ -16,7 +16,7 @@ const PortableTextReact = ({ description }: { description: any }) => {
     block: {
       // Ex. 1: customizing common block types
       normal: ({ children }: { children: React.ReactNode }) => (
-        <p className="mb-4">{children}</p>
+        <p className="mb-4 text-white">{children}</p>
       ),
     },
   };

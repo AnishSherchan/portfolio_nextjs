@@ -120,7 +120,7 @@ const NavBar = () => {
                 id={item.name}
                 icon={item.icon}
                 className={`${
-                  pathname == item.url
+                  pathname === item.url || pathname.startsWith(item.url + "/")
                     ? "text-dark_active_link"
                     : "text-dark_text"
                 }`}

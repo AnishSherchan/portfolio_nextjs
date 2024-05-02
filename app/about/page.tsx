@@ -17,7 +17,7 @@ const About = async () => {
             <Image
               className=" w-full h-auto rounded-[5px] object-cover"
               src={BuildImageUrl(profile_photo)}
-              alt="Project Image"
+              alt="User Image"
               fill={true}
             />
           </div>
