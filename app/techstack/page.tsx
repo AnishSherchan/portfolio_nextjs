@@ -25,7 +25,7 @@ const TechStack = async () => {
     <>
       <div className=" py-[10px] flex flex-col gap-[15px]" id="frontend_stack">
         <h2 className=" text-white text-2xl">Frontend tools</h2>
-        <div className="w-full flex flex-row flex-wrap lg:gap-[30px] justify-center">
+        <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[30px] justify-center">
           {techStackData
             ?.filter((stack: any) => stack.development_format === "frontend")
             .map((tech: any) => {
@@ -44,7 +44,7 @@ const TechStack = async () => {
 
       <div className=" py-[10px] flex flex-col gap-[15px]" id="backend_stack">
         <h2 className=" text-white text-2xl">Backend tools</h2>
-        <div className="w-full flex flex-row flex-wrap lg:gap-[30px] justify-center">
+        <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[30px] justify-center">
           {techStackData
             ?.filter((stack: any) => stack.development_format === "backend")
             .map((tech: any) => {
