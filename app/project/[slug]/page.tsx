@@ -6,7 +6,7 @@ import moment from "moment";
 import PortableTextReact from "@/app/components/PortableText";
 import TechStackCard from "@/app/components/TechStackCard";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projectData = (await GetSpecificProjectData(params.slug)) || [];
