@@ -6,10 +6,11 @@ import moment from "moment";
 import PortableTextReact from "@/app/components/PortableText";
 import TechStackCard from "@/app/components/TechStackCard";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projectData = (await GetSpecificProjectData(params.slug)) || [];
-  console.log(projectData);
+  const router = useRouter();
   const {
     Tag,
     name,
@@ -25,7 +26,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <div className="flex flex-col gap-[10px]">
-        <BackButton href="/project" icon="ep:back" />
+        <BackButton href="/project" icon="ep:back" title="All Projects" />
         <h1 className=" text-white font-bold text-3xl">{name}</h1>
         <h3 className=" text-xl text-white">
           Published at: {moment(_createdAt).format("MMMM Do YYYY")}
@@ -61,6 +62,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
                   icon={tech.icon}
                   key={tech._id}
                   pinned={tech.pinned}
+                  handleClick={() =>
+                    router.push(`/techstack/${tech.slug.current}`)
+                  }
                 />
               );
             })}

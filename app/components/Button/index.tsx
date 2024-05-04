@@ -46,7 +46,15 @@ export const Button = ({
   );
 };
 
-export const BackButton = ({ href, icon }: { href: string; icon: string }) => {
+export const BackButton = ({
+  href,
+  icon,
+  title,
+}: {
+  href: string;
+  icon: string;
+  title: string;
+}) => {
   return (
     <Link href={href}>
       <div className="flex flex-wrap gap-[8px] text-dark_text cursor-pointer items-center">
@@ -57,7 +65,7 @@ export const BackButton = ({ href, icon }: { href: string; icon: string }) => {
           width={18}
           className="text-dark_text"
         />{" "}
-        All Projects
+        {title}
       </div>
     </Link>
   );

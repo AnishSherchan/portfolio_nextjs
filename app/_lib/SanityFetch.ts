@@ -24,6 +24,18 @@ export const GetTechStackData = async () => {
   }
 };
 
+export const GetSingleTechStackData = async (slug: string) => {
+  const TechStack_QUERY = `*[_type == "tech_Stack" && slug.current == "${slug}"] {  name, _id, description, pinned,development_format,_createdAt,_updatedAt,slug,icon } `;
+  try {
+    const TeckStackData = await client.fetch(TechStack_QUERY);
+
+    return TeckStackData;
+  } catch (error) {
+    console.error("Error fetching Tech stack data:", error);
+    throw error;
+  }
+};
+
 export const GetServiceData = async () => {
   const Service_QUERY = `*[_type == "service"] {slug, description,
 "plaintextBody": pt::text(description),
@@ -52,7 +64,19 @@ export const GetAboutData = async () => {
 
 export const GetSpecificProjectData = async (slug: string) => {
   const ProjectData = `*[_type == "projects" && slug.current == "${slug}"] 
-  {_createdAt,Tag,image,name,content,slug,preview_url,"techstackref":techstackref[]->{...},_id,_createdAt,pinned,github_url}`;
+  {_createdAt,Tag,image,name,content,slug,preview_url,"techstackref":techstackref[]->{...},_id,_createdAt,pinned,github_url, description}`;
+  try {
+    const Project = await client.fetch(ProjectData);
+    return Project;
+  } catch (error) {
+    console.error("Error fetching About data:", error);
+    throw error;
+  }
+};
+
+export const GetRefrenceProjectData = async (id: string) => {
+  const ProjectData = `*[_type == "projects" && references('${id}') ]
+  {_createdAt,Tag,image,name,content,slug,preview_url,"techstackref":techstackref[]->{...},_id,_createdAt,pinned,github_url, description}`;
   try {
     const Project = await client.fetch(ProjectData);
     return Project;

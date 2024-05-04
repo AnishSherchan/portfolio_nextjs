@@ -41,6 +41,9 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
                 icon={tech.icon}
                 key={tech._id}
                 pinned={tech.pinned}
+                handleClick={() =>
+                  router.push(`/techstack/${tech.slug.current}`)
+                }
               />
             );
           })}
@@ -54,6 +57,9 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
                 icon={tech.icon}
                 key={tech._id}
                 pinned={tech.pinned}
+                handleClick={() =>
+                  router.push(`/techstack/${tech.slug.current}`)
+                }
               />
             );
           })}
