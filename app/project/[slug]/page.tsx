@@ -5,7 +5,23 @@ import { BuildImageUrl } from "@/app/_lib/ImageBuilder";
 import moment from "moment";
 import PortableTextReact from "@/app/components/PortableText";
 import Link from "next/link";
-import TechStack from "@/app/components/Contents/TechStack";
+import TechStackCard from "@/app/components/TechStackCard";
+
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Showcase work | Anish Sherchan",
+  description: "I design and code interface that fascinate users.",
+  keywords: [
+    "Anish Sherchan",
+    "frontend development",
+    "React Js",
+    "Tech Stack",
+    "Next Js",
+    "Anish Sherchan",
+    "Sherchan",
+    "Anish",
+  ],
+};
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projectData = (await GetSpecificProjectData(params.slug)) || [];
@@ -51,7 +67,20 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </div>
         <div className=" flex flex-col gap-[15px]">
           <h2 className=" text-white text-2xl">Tech Stack Used</h2>
-          <TechStack techstackref={techstackref} />
+          <div className=" w-full flex flex-row flex-wrap gap-5 lg:gap-8 justify-center ">
+            {techstackref?.map((tech: any) => {
+              return (
+                <TechStackCard
+                  title={tech.name}
+                  description={tech.description}
+                  icon={tech.icon}
+                  key={tech._id}
+                  pinned={tech.pinned}
+                  slug={tech.slug.current}
+                />
+              );
+            })}
+          </div>
         </div>
         <div className=" flex gap-4 w-full">
           <Link href={github_url} target="_blank">

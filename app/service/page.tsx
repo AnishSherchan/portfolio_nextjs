@@ -1,7 +1,22 @@
 import React from "react";
 import { GetServiceData } from "../_lib/SanityFetch";
 import ServicesCard from "../components/ServicesCard";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Service | Anish Sherchan",
+  description: "Services which i provide for building web applications.",
+  keywords: [
+    "Anish Sherchan",
+    "frontend development",
+    "backend development",
+    "Services",
+    "React Js",
+    "Next Js",
+    "Anish Sherchan",
+    "Sherchan",
+    "Anish",
+  ],
+};
 const Services = async () => {
   // Fetch service data asynchronously
   const serviceData = (await GetServiceData()) || [];

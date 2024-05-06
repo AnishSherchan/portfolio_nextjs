@@ -1,24 +1,25 @@
 "use client";
 import { Icon } from "@iconify/react";
 import React from "react";
-
+import { useRouter } from "next/navigation";
 const TechStackCard = ({
   title,
   description,
   icon,
   pinned,
-  handleClick,
+  slug,
 }: {
   title: string;
   description: string;
   icon: string;
   pinned: boolean;
-  handleClick: any;
+  slug: string;
 }) => {
+  const router = useRouter();
   return (
     <div
       className=" p-[14px] cursor-pointer max-w-[470px] w-[470px] gap-[10px] border-2 border-dark_stroke rounded-[17px] flex justify-between items-center"
-      onClick={handleClick}
+      onClick={() => router.push(`/techstack/${slug}`)}
     >
       <div id="Description" className=" flex flex-col flex-wrap gap-1">
         <div className=" flex flex-wrap gap-1 items-center">

@@ -5,6 +5,25 @@ import { BuildImageUrl } from "../_lib/ImageBuilder";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import PortableTextReact from "../components/PortableText";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Me | Anish Sherchan",
+  description:
+    "I am an energetic and enthusiastic computer science student with a strong desire to learn and train with professionals in UI/UX and Frontend development. ",
+  keywords: [
+    "Anish Sherchan",
+    "frontend development",
+    "backend development",
+    "fullstack development",
+    "React Js",
+    "Tech Stack",
+    "Next Js",
+    "Anish Sherchan",
+    "Sherchan",
+    "Anish",
+  ],
+};
 
 const About = async () => {
   const aboutData = (await GetAboutData()) || [];
@@ -19,6 +38,7 @@ const About = async () => {
               src={BuildImageUrl(profile_photo)}
               alt="User Image"
               fill={true}
+              priority
             />
           </div>
         </div>

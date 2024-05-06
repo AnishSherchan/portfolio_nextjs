@@ -12,7 +12,7 @@ const Form = () => {
   return (
     <CardContainer className="bg-dark_secondary_background flex flex-col gap-[20px] py-[21px] px-[28px] cursor-default">
       <h3 className=" text-white font-semibold text-xl">
-        Talk with me for development work.
+        Message me for development work.
       </h3>
       <form
         onSubmit={handleSubmit}

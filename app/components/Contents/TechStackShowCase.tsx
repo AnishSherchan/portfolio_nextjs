@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
   const router = useRouter();
-  console.log(techStackData);
   const pinnedFrontendTech = techStackData?.filter((stack: any) => {
     return stack.pinned === true && stack.development_format === "frontend";
   });
@@ -41,9 +40,7 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
                 icon={tech.icon}
                 key={tech._id}
                 pinned={tech.pinned}
-                handleClick={() =>
-                  router.push(`/techstack/${tech.slug.current}`)
-                }
+                slug={tech.slug.current}
               />
             );
           })}
@@ -57,9 +54,7 @@ const TechStackShowCase = ({ techStackData }: { techStackData: any }) => {
                 icon={tech.icon}
                 key={tech._id}
                 pinned={tech.pinned}
-                handleClick={() =>
-                  router.push(`/techstack/${tech.slug.current}`)
-                }
+                slug={tech.slug.current}
               />
             );
           })}

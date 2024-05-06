@@ -1,10 +1,10 @@
 import React from "react";
-import { Metadata } from "next";
 import { WavyBackground } from "../components/WaveBackground";
 
 import ProjectShowCase from "../components/Contents/ProjectShowCase";
 import { GetProjectData } from "../_lib/SanityFetch";
 
+import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Showcase work | Anish Sherchan",
   description: "I design and code interface that fascinate users.",

@@ -1,8 +1,8 @@
 import React from "react";
-import { Metadata } from "next";
 import { GetTechStackData } from "../_lib/SanityFetch";
-import TechStackParticular from "../components/Contents/TechStackParticular";
+import TechStackCard from "../components/TechStackCard";
 
+import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tech Stack | Anish Sherchan",
   description: "Tools i used for creating web applications.",
@@ -33,17 +33,53 @@ const TechStack = async () => {
           Tools and resources which I use for developing Web applications.
         </h3>
         <div className="flex flex-col lg:gap-[60px] gap-[30px] mt-[60px]">
-          <TechStackParticular
-            title="Frontend tools"
-            filter="frontend"
-            techStackData={techStackData}
-          />
+          <div
+            className=" py-[10px] flex flex-col gap-[15px]"
+            id="frontend_stack"
+          >
+            <h2 className=" text-white text-2xl">Frontend tools</h2>
+            <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[30px] justify-center">
+              {techStackData
+                ?.filter(
+                  (stack: any) => stack.development_format === "frontend"
+                )
+                .map((tech: any) => {
+                  return (
+                    <TechStackCard
+                      title={tech.name}
+                      description={tech.description}
+                      icon={tech.icon}
+                      key={tech._id}
+                      pinned={tech.pinned}
+                      slug={tech.slug.current}
+                    />
+                  );
+                })}
+            </div>
+          </div>
 
-          <TechStackParticular
-            title="Backend tools"
-            filter="backend"
-            techStackData={techStackData}
-          />
+          <div
+            className=" py-[10px] flex flex-col gap-[15px]"
+            id="frontend_stack"
+          >
+            <h2 className=" text-white text-2xl">Backend tools</h2>
+            <div className="w-full flex flex-row flex-wrap gap-5 lg:gap-[30px] justify-center">
+              {techStackData
+                ?.filter((stack: any) => stack.development_format === "backend")
+                .map((tech: any) => {
+                  return (
+                    <TechStackCard
+                      title={tech.name}
+                      description={tech.description}
+                      icon={tech.icon}
+                      key={tech._id}
+                      pinned={tech.pinned}
+                      slug={tech.slug.current}
+                    />
+                  );
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </>
