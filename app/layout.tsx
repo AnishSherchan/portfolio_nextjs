@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import Head from "next/head";
 import type { Metadata } from "next";
+import ToastProvider from "./_lib/ToastContainer";
 
 export const metadata: Metadata = {
   icons: {
@@ -29,7 +30,7 @@ export default function RootLayout({
           <NavBar />
           <div className=" w-full">
             <div className=" lg:px-[110px] py-10 pb-28 px-6 lg:py-[100px] w-full max-w-[1920px] mx-auto">
-              {children}
+              <ToastProvider>{children}</ToastProvider>
             </div>
             <Footer />
           </div>

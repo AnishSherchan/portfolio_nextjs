@@ -31,7 +31,9 @@ const About = async () => {
         <Link href="/contact">
           <Button type="Secondary" icon="fa:paper-plane" title="Message me" />
         </Link>
-        <Button type="Secondary" title="Email" icon="ion:mail-outline" />
+        <a href={`mailto:${email}`}>
+          <Button type="Secondary" title="Email" icon="ion:mail-outline" />
+        </a>
       </div>
     </div>
   );
