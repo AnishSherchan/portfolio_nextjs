@@ -1,6 +1,7 @@
 import React from "react";
 import { BackButton } from "@/app/components/Button";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import NoDataSvg from "@/public/undraw_empty_re_opql.svg";
 import {
   GetRefrenceProjectData,
   GetSingleTechStackData,
@@ -29,7 +30,16 @@ const TechStackData = async ({ params }: { params: { slug: string } }) => {
         {projectData.length > 0 ? (
           <ProjectPArticular projectData={projectData} />
         ) : (
-          <p className=" text-white">No data</p>
+          <div className=" w-full flex flex-col items-center gap-10 mt-8">
+            <Image
+              src={NoDataSvg}
+              alt="Project Image"
+              className=" w-64 h-auto"
+            />
+            <p className=" text-white text-xl">
+              No Projects on <span className=" font-semibold">{name}</span>
+            </p>
+          </div>
         )}
       </div>
     </div>

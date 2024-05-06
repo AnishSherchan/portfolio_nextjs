@@ -4,13 +4,11 @@ import Image from "next/image";
 import { BuildImageUrl } from "@/app/_lib/ImageBuilder";
 import moment from "moment";
 import PortableTextReact from "@/app/components/PortableText";
-import TechStackCard from "@/app/components/TechStackCard";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import TechStack from "@/app/components/Contents/TechStack";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projectData = (await GetSpecificProjectData(params.slug)) || [];
-  const router = useRouter();
   const {
     Tag,
     name,
@@ -53,22 +51,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </div>
         <div className=" flex flex-col gap-[15px]">
           <h2 className=" text-white text-2xl">Tech Stack Used</h2>
-          <div className=" w-full flex flex-row flex-wrap gap-5 lg:gap-8 justify-center ">
-            {techstackref?.map((tech: any) => {
-              return (
-                <TechStackCard
-                  title={tech.name}
-                  description={tech.description}
-                  icon={tech.icon}
-                  key={tech._id}
-                  pinned={tech.pinned}
-                  handleClick={() =>
-                    router.push(`/techstack/${tech.slug.current}`)
-                  }
-                />
-              );
-            })}
-          </div>
+          <TechStack techstackref={techstackref} />
         </div>
         <div className=" flex gap-4 w-full">
           <Link href={github_url} target="_blank">
