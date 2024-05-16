@@ -70,7 +70,7 @@ export default async function Home() {
             <h3 className=" text-xl  text-dark_text max-w-[750px]">
               I am an energetic and enthusiastic computer science student with a
               strong desire to learn and train with professionals in UI/UX and
-              Frontend development. {projectData && projectData[0]?.name}
+              Frontend development.
             </h3>
           </div>
           <div className=" mt-[30px] flex flex-wrap gap-[25px]">
